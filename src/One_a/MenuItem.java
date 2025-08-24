@@ -47,7 +47,10 @@ public class MenuItem {
 
     //way to display instances of this class
     void displayItemInfo() {
-        System.out.println(category + ", " + name + "..............." + price);
+        System.out.println("Name: " + name);
+        System.out.println("Price: " + price);
+        System.out.println("Category: " + category);
+        System.out.println();
         return;
     }
 }
