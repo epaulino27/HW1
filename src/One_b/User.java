@@ -7,7 +7,7 @@ public class User {
     String username;
     ArrayList<Playlist> playlists = new ArrayList<Playlist>();
 
-    public static Playlist createPlaylist(String name, String type){
+    public Playlist createPlaylist(String name, String type){
         switch(type){
             case "rock": case "Rock":
                 return new RockPlaylist(name);
@@ -24,7 +24,7 @@ public class User {
         clear();
     }
 
-    public static void addSongToPlaylist(Playlist playlist, Song song){
+    public void addSongToPlaylist(Playlist playlist, Song song){
         playlist.addSong(song);
     }
 

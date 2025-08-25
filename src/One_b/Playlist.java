@@ -16,7 +16,7 @@ public class Playlist {
     }
 
     public void playAllSongs(){
-        System.out.println("Now Playing: " + Playlist);
+        System.out.println("Now Playing: All your songs at once!");
         return;
     }
 }
