@@ -11,6 +11,7 @@ public class Song {
         this.title = title;
         this.artist = artist;
         this.duration = duration;
+        System.out.println("Making song now.");
     }
 
     //getters

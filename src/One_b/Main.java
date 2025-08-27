@@ -14,6 +14,8 @@ public class Main {
         Song jazz1 = new Song("So What", "Miles Davis", 9.22);
         Song jazz2 = new Song("All of Me", "Billie Holiday", 3.06);
 
+        System.out.println();
+
         //make User
         User user1 = new User();
 
@@ -21,6 +23,8 @@ public class Main {
         Playlist Rock_the_World = user1.createPlaylist("Rock_the_World", "rock");
         Playlist Dont_stop_the_Pop =  user1.createPlaylist("Don't_stop_the_Pop", "pop");
         Playlist The_smoothest_ofJazz = user1.createPlaylist("The_smoothest_of_Jazz", "jazz");
+
+        System.out.println();
 
         //add songs to playlists
         user1.addSongToPlaylist(Rock_the_World, rock1);
@@ -32,23 +36,27 @@ public class Main {
         user1.addSongToPlaylist(The_smoothest_ofJazz, jazz1);
         user1.addSongToPlaylist(The_smoothest_ofJazz, jazz2);
 
+        System.out.println();
+
         //display playlists
         System.out.println("Rock Playlist: Rock_the_World");
-
-        System.out.println(rock1.GetTitle() + " by " + rock1.GetArtist() + ", " + rock1.GetDuration());
-        System.out.println(rock2.GetTitle() + " by " + rock2.GetArtist() + ", " + rock2.GetDuration());
+        Rock_the_World.playAllSongs();
         System.out.println();
 
         System.out.println("Pop Playlist: Don't_stop_the_Pop");
-
-        System.out.println(pop1.GetTitle() + " by " + pop1.GetArtist() + ", " + pop1.GetDuration());
-        System.out.println(pop2.GetTitle() + " by " + pop2.GetArtist() + ", " + pop2.GetDuration());
+        Dont_stop_the_Pop.playAllSongs();
         System.out.println();
 
         System.out.println("Jazz Playlist: The_smoothest_of_Jazz");
-
-        System.out.println(jazz1.GetTitle() + " by " + jazz1.GetArtist() + ", " + jazz1.GetDuration());
-        System.out.println(jazz2.GetTitle() + " by " + jazz2.GetArtist() + ", " + jazz2.GetDuration());
+        The_smoothest_ofJazz.playAllSongs();
         System.out.println();
+
+        //test delete functions
+        user1.removeSongFromPlaylist(Rock_the_World,rock2);
+        System.out.println("New Rock Playlist: Rock_the_World");
+        Rock_the_World.playAllSongs();
+        System.out.println();
+
+        user1.deletePlaylist(The_smoothest_ofJazz); //will pop error if attempt to call it now
     }
 }
