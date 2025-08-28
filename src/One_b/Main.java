@@ -17,7 +17,7 @@ public class Main {
         System.out.println();
 
         //make User
-        User user1 = new User();
+        User user1 = new User("default_name");
 
         //make playlists
         Playlist Rock_the_World = user1.createPlaylist("Rock_the_World", "rock");

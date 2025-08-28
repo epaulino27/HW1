@@ -6,6 +6,10 @@ public class User {
     String username;
     List<Playlist> playlists = new ArrayList<Playlist>();
 
+    User(String username){
+        this.username = username;
+    }
+
     public Playlist createPlaylist(String name, String type){
         switch(type){
             case "rock": case "Rock":
