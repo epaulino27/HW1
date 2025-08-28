@@ -4,16 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
+    //attributes
     List<Playlist> playlists = new ArrayList<Playlist>();
     String username;
     List<Song> library = new ArrayList<Song>();
 
+    //constructor
     User(String username){
         this.username = username;
         System.out.println("User Created");
         return;
     }
 
+    //setters
     public Playlist createPlaylist(String name, String genre){
         switch(genre){
             case "rock": case "Rock":
@@ -31,26 +34,18 @@ public class User {
         }
     }
 
-    public void deletePlaylist(Playlist playlist){
-        playlists.remove(playlist);
-        return;
-    }
-
     public void addSongToPlaylist(Playlist playlist, Song song){
         playlist.addSong(song);
     }
 
-    public void removeSongFromPlaylist(Playlist playlist, Song song){
-        playlist.removeSong(song);
-        return;
-    }
+    //getters
 
     public List<Song> listByGenre(String genre){
         switch(genre){
             case "pop": case "Pop":
-               return PopPlaylist.getSongs();
+                return PopPlaylist.getSongs();
             case "rock": case "Rock":
-               return RockPlaylist.getSongs();
+                return RockPlaylist.getSongs();
             case "jazz": case "Jazz":
                 return JazzPlaylist.getSongs();
             default:
@@ -71,6 +66,11 @@ public class User {
         }
     }
 
+    public List<Playlist> getPlaylists(){
+        return playlists;
+    }
+
+    //display method
     public void showAllSongs() {
         for (Song show : library) {
             System.out.println(show.toString());
@@ -78,8 +78,14 @@ public class User {
         return;
     }
 
-    public List<Playlist> getPlaylists(){
-        return playlists;
+    //other methods
+    public void deletePlaylist(Playlist playlist){
+        playlists.remove(playlist);
+        return;
     }
 
+    public void removeSongFromPlaylist(Playlist playlist, Song song){
+        playlist.removeSong(song);
+        return;
+    }
 }

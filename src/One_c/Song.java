@@ -34,6 +34,7 @@ public class Song {
         return mood;
     }
 
+    //display method
     public String toString(){
         return GetTitle() + "by " + GetArtist() + " , " + GetDuration() + " minutes long. Genre: " + GetGenre() + ", Mood: " + GetMood();
     }

@@ -4,23 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JazzPlaylist implements Playlist {
+    //attributes
     String name;
-    List<Song> songs = new ArrayList<Song>();
+    static List<Song> songs = new ArrayList<Song>();
 
+    //constructor
     public JazzPlaylist(String name) {
         this.name = name;
     }
 
+    //getters
     public String getName() {
         return name;
     }
 
+    public static List<Song> getSongs() {
+        for(Song play: songs) {
+            System.out.println(play.GetTitle());
+        }
+        return songs;
+    }
+
+    //setters
     public void addSong(Song song){
         System.out.println("Adding song to jazz playlist now.");
         songs.add(song);
         return;
     }
 
+    //other methods
     public void removeSong(Song song){
         System.out.println("Removing song from jazz playlist now.");
         songs.remove(song);
@@ -33,13 +45,6 @@ public class JazzPlaylist implements Playlist {
             System.out.println(play.GetTitle() + " by " + play.GetArtist() + ", " + play.GetDuration());
         }
         return;
-    }
-
-    public static List<Song> getSongs() {
-        for(Song play: songs) {
-            System.out.println(play.GetTitle());
-        }
-        return songs;
     }
 }
 
