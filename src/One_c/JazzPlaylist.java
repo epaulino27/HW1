@@ -5,7 +5,7 @@ import java.util.List;
 
 public class JazzPlaylist implements Playlist {
     String name;
-    static List<Song> songs = new ArrayList<Song>();
+    List<Song> songs = new ArrayList<Song>();
 
     public JazzPlaylist(String name) {
         this.name = name;
@@ -35,7 +35,6 @@ public class JazzPlaylist implements Playlist {
         return;
     }
 
-    //review and change
     public static List<Song> getSongs() {
         for(Song play: songs) {
             System.out.println(play.GetTitle());
